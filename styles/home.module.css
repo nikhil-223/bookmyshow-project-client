@@ -1,0 +1,23 @@
+.home{
+    background-color: rgb(23, 34, 58);
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container{
+    width: 75%;
+    height: 80%;
+    border-radius: 4rem;
+    border:0.2rem solid black;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: 5rem 5rem 5rem;
+    gap: 1rem;
+}
+
+.container_item{
+    width: 100%;
+    background-color: red;
+}
