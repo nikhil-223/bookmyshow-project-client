@@ -7,7 +7,7 @@
 	justify-content: center;
 }
 .container {
-    position: relative;
+	position: relative;
 	width: 75%;
 	height: 80%;
 	border-radius: 1.5rem;
@@ -15,170 +15,200 @@
 	display: grid;
 	grid-template-columns: 70% 1fr;
 	grid-template-rows: 10rem 10rem 8rem 6rem;
-    padding: 1rem;
+	padding: 1rem;
 	gap: 1rem;
-    background-color: rgb(10, 32, 81);
-    color: rgb(248, 237, 237);
+	background-color: rgb(10, 32, 81);
+	color: rgb(248, 237, 237);
 }
 
-
-.container_item_heading{
-    margin-left: 0.2rem;
-    font-weight: 600;
-    font-size: 1.2rem;
+.container_item_heading {
+	margin-left: 0.2rem;
+	font-weight: 600;
+	font-size: 1.2rem;
 }
 
 .movies {
 	grid-area: 1/1 / span 1 / span 1;
 }
 
-.list{
-    display: flex ;
-    flex-wrap: wrap;
-    gap: 1rem;
+.list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
 }
-.option{
-    padding: 0.5rem;
-    border: 0.1rem solid rgb(0, 162, 255);
-    border-radius: 0.5rem;
-    cursor: pointer;
-    transition: all 0.3s ;
+.option {
+	padding: 0.5rem;
+	border: 0.1rem solid rgb(0, 162, 255);
+	border-radius: 0.5rem;
+	cursor: pointer;
+	transition: all 0.3s;
 }
 
-.seat_option{
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    cursor: default;
+.seat_option {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	cursor: default;
 }
 
 .seat_option:hover {
-    background-color: transparent !important;
+	background-color: transparent !important;
 }
 
-.seat_option input{
-    width: 4rem;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    border: none;
-    outline: none;
-    background-color:rgb(255 255 255 / 15%) ;
-    color: white;
+.seat_option input {
+	width: 4rem;
+	padding: 0.5rem;
+	border-radius: 0.5rem;
+	border: none;
+	outline: none;
+	background-color: rgb(255 255 255 / 15%);
+	color: white;
 }
 
-.option:hover{
-    background-color: rgb(255 255 255 / 15%);
+.option:hover {
+	background-color: rgb(255 255 255 / 15%);
 }
 
 .time_slot {
-    grid-area: 2/1 / span 1 / span 1;
+	grid-area: 2/1 / span 1 / span 1;
 }
 
 .seats {
-    grid-area: 3/1 / span 1 / span 2;
+	grid-area: 3/1 / span 1 / span 2;
 }
 
-.btn_area{
-    grid-area: 4/1 / span 1 / span 2 ;
-    display: flex;
-    flex-direction: row !important;
-    align-items: center;
+.btn_area {
+	grid-area: 4/1 / span 1 / span 2;
+	display: flex;
+	flex-direction: row !important;
+	align-items: center;
 }
 
-.btn{
-    width: fit-content;
-    font-size: 1.1rem;
-    padding: 0.5rem 0.7rem;
-    font-weight: 600;
-    border-radius: 0.5rem;
-    border: none;
-    background-color: rgb(112, 187, 203);
-    color:rgb(8, 8, 50); 
-    cursor: pointer;
+.btn {
+	width: fit-content;
+	font-size: 1.1rem;
+	padding: 0.5rem 0.7rem;
+	font-weight: 600;
+	border-radius: 0.5rem;
+	border: none;
+	background-color: rgb(112, 187, 203);
+	color: rgb(8, 8, 50);
+	cursor: pointer;
 }
 
 .last_booking {
-    position: relative;
-    grid-area: 1/2 / span 2 / span 1;
-    background-color: rgb(255 255 255 / 5%);
-    display: grid !important;
-    grid-template-rows: auto auto 1fr;
-    border-radius: 1rem;
+	position: relative;
+	grid-area: 1/2 / span 2 / span 1;
+	background-color: rgb(255 255 255 / 5%);
+	display: grid !important;
+	grid-template-rows: auto auto 1fr;
+	border-radius: 1rem;
 }
 
 .container_item {
 	width: 100%;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
 }
 
 .bookingDetails {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
 }
 
-.bookingDetails .bookingDetails_heading{
-    font-size: 1.2rem;
-    margin-left: 0.3rem; 
+.bookingDetails .bookingDetails_heading {
+	font-size: 1.2rem;
+	margin-left: 0.3rem;
 }
 
-.bookingDetails .bookingDetails_content{
-    padding: 0.5rem;
-    border: 0.1rem solid rgb(0, 162, 255);
-    background-color:rgb(0, 162, 255) ;
-    color: rgb(8, 8, 50);
-    width: fit-content;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    transition: all 0.3s ;
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap; 
+.bookingDetails .bookingDetails_content {
+	padding: 0.5rem;
+	border: 0.1rem solid rgb(0, 162, 255);
+	background-color: rgb(0, 162, 255);
+	color: rgb(8, 8, 50);
+	width: fit-content;
+	border-radius: 0.5rem;
+	cursor: pointer;
+	transition: all 0.3s;
+	display: flex;
+	gap: 1rem;
+	flex-wrap: wrap;
 }
 
-.bookingDetails_seats{
-    color: rgb(8, 8, 50);
-    width: fit-content;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    transition: all 0.3s ;
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap; 
+.bookingDetails_seats {
+	color: rgb(8, 8, 50);
+	width: fit-content;
+	border-radius: 0.5rem;
+	cursor: pointer;
+	transition: all 0.3s;
+	display: flex;
+	gap: 1rem;
+	flex-wrap: wrap;
 }
 
-.no_booking{
-    position: absolute; 
-    top:50%;
-    transform: translate(0,-50%);
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.3rem; 
-    color: rgb(0, 162, 255);
+.no_booking {
+	position: absolute;
+	top: 50%;
+	transform: translate(0, -50%);
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.3rem;
+	color: rgb(0, 162, 255);
 }
 
-.alert-success{
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    border-radius: 0.5rem;
-    background-color: rgb(121, 222, 90);
-    color: black;
-    margin: 1rem;
-    padding: 0.5rem;
+.alert {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	border-radius: 0.5rem;
+	background-color: rgb(121, 222, 90);
+	color: black;
+	margin: 1rem;
+	padding: 0.5rem;
 }
-.alert-error{
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    border-radius: 0.5rem;
-    background-color: rgb(122, 57, 50);
-    color: white;
-    margin: 1rem;
-    padding: 0.5rem;
+.alert-success {
+	background-color: rgb(121, 222, 90);
+	color: black;
+}
+.alert-error {
+	background-color: rgb(122, 57, 50);
+	color: white;
+}
+@media only screen and (max-width: 600px) {
+	.container {
+        position: unset;
+        margin: 2rem 0.5rem;
+        width: 100%;
+        height: auto;
+		grid-template-columns: 100%;
+		grid-template-rows: auto auto auto auto auto;
+	}
+	.movies {
+		grid-area: 1/1 / span 1 / span 1;
+	}
+	.time_slot {
+		grid-area: 2/1 / span 1 / span 1;
+	}
+
+	.seats {
+		grid-area: 3/1 / span 1 / span 1;
+	}
+
+	.btn_area {
+		grid-area: 4/1 / span 1 / span 1;
+		display: flex;
+		flex-direction: row !important;
+		align-items: center;
+	}
+	.last_booking {
+		grid-area: 5/1 / span 1 / span 1;
+	}
+    .alert {
+        position: fixed;
+    }
 }

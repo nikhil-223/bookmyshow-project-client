@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 
 const BookBtn = (props) => {
 	const domain = "https://bookmyshow-backend-28y2.onrender.com/";
@@ -11,7 +13,9 @@ const BookBtn = (props) => {
 		setAlert,
 	} = props;
 
-	const showAlert = (type,message) => {
+	const [scrollDown, setScrollDown] = useState(false);
+
+	const showAlert = (type, message) => {
 		setTimeout(() => {
 			setAlert({
 				isAlert: false,
@@ -25,6 +29,13 @@ const BookBtn = (props) => {
 			message: message,
 		});
 	};
+
+	useEffect(() => {
+		if (scrollDown) {
+			window.scrollTo(0, document.body.scrollHeight);
+			setScrollDown(false);
+		}
+	}, [scrollDown]);
 
 	const bookShow = () => {
 		setIsBooking(true);
@@ -57,14 +68,16 @@ const BookBtn = (props) => {
 				}
 			} catch (error) {
 				console.log(error);
-			} finally{
+			} finally {
 				showAlert("success", "Booking is successfull");
+				setScrollDown(true);
 			}
 		};
 
-		if (myShow.movie === "") showAlert("error","Please select a movie");
-		else if (myShow.slot === "") showAlert("error","Please select a slot");
-		else if (seatsSelected[0] === undefined) showAlert("error","Please select seats");
+		if (myShow.movie === "") showAlert("error", "Please select a movie");
+		else if (myShow.slot === "") showAlert("error", "Please select a slot");
+		else if (seatsSelected[0] === undefined)
+			showAlert("error", "Please select seats");
 		else {
 			bookShow();
 			setIsBooking(false);
