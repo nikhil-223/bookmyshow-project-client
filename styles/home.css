@@ -11,7 +11,6 @@
 	width: 75%;
 	height: 80%;
 	border-radius: 1.5rem;
-	border: 0.2rem solid black;
 	display: grid;
 	grid-template-columns: 70% 1fr;
 	grid-template-rows: minmax(10rem,auto)  minmax(10rem,auto)  minmax(8rem,auto)  minmax(6rem,auto);
