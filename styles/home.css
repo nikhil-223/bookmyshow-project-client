@@ -7,6 +7,7 @@
 	justify-content: center;
 }
 .container {
+    position: relative;
 	width: 75%;
 	height: 80%;
 	border-radius: 1.5rem;
@@ -159,4 +160,25 @@
     align-items: center;
     font-size: 1.3rem; 
     color: rgb(0, 162, 255);
+}
+
+.alert-success{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border-radius: 0.5rem;
+    background-color: rgb(121, 222, 90);
+    color: black;
+    margin: 1rem;
+    padding: 0.5rem;
+}
+.alert-error{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border-radius: 0.5rem;
+    background-color: rgb(122, 57, 50);
+    color: white;
+    margin: 1rem;
+    padding: 0.5rem;
 }

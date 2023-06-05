@@ -2,11 +2,33 @@ import React from "react";
 
 const BookBtn = (props) => {
 	const domain = "https://bookmyshow-backend-28y2.onrender.com/";
-	const { myShow, setMyShow, setBookedData, setIsBooking, initialState } =
-		props;
+	const {
+		myShow,
+		setMyShow,
+		setBookedData,
+		setIsBooking,
+		initialState,
+		setAlert,
+	} = props;
+
+	const showAlert = (type,message) => {
+		setTimeout(() => {
+			setAlert({
+				isAlert: false,
+				type: "success",
+				message: "",
+			});
+		}, 2000);
+		setAlert({
+			isAlert: true,
+			type: type,
+			message: message,
+		});
+	};
 
 	const bookShow = () => {
 		setIsBooking(true);
+		showAlert("success", "..Booking Please wait");
 		let seatsSelected = Object.values(myShow.seats).filter((seatNo) => {
 			return seatNo !== 0;
 		});
@@ -35,13 +57,14 @@ const BookBtn = (props) => {
 				}
 			} catch (error) {
 				console.log(error);
+			} finally{
+				showAlert("success", "Booking is successfull");
 			}
 		};
 
-		if (myShow.movie === "") console.log("please select a movie");
-		else if (myShow.slot === "") console.log("please select a slot");
-		else if (seatsSelected[0] === undefined)
-			console.log("please select a seat no.");
+		if (myShow.movie === "") showAlert("error","Please select a movie");
+		else if (myShow.slot === "") showAlert("error","Please select a slot");
+		else if (seatsSelected[0] === undefined) showAlert("error","Please select seats");
 		else {
 			bookShow();
 			setIsBooking(false);

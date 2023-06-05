@@ -8,6 +8,7 @@ import {
 ,TimeSlotSelection
 ,BookBtn
 ,SeatSelection
+,Alert
 } from "@components";
 
 const Home = () => {
@@ -27,6 +28,11 @@ const Home = () => {
 	const [myShow, setMyShow] = useState(initialState);
 	const [isBooking, setIsBooking] = useState(false)
 	const [bookedData, setBookedData] = useState(null)
+	const [alert, setAlert] = useState({
+		isAlert: false,
+		type:'success',
+		message:''
+	})
 
 	return (
 		<section className="home">
@@ -48,8 +54,10 @@ const Home = () => {
 					setMyShow={setMyShow}
 					setBookedData={setBookedData}
 					setIsBooking={setIsBooking}
+					setAlert={setAlert}
 					initialState={initialState}
 				/>
+				<Alert alert={alert} />
 			</div>
 		</section>
 	);
