@@ -8,6 +8,9 @@ const BookedData = (props) => {
 				<div> ..booking </div>
 			) : (
 				<>
+				<div className="bookingDetails main_heading">
+					<span > Last Booking Details:</span>
+				</div>
 					<div className="bookingDetails">
 						<span className="bookingDetails_heading">Movie</span>
 						<span className="bookingDetails_content">{data.movie}</span>
