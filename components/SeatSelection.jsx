@@ -5,7 +5,7 @@ const SeatSelection = (props) => {
     const {myShow,setMyShow}=props;
 
 	const setNumberOfSeats = (seat, e) => {
-		const seats = { ...myShow.seats, A1: e.target.value };
+		const seats = { ...myShow.seats, [`${seat}`]: e.target.value };
 		setMyShow({ ...myShow, seats: seats });
 	};
 
