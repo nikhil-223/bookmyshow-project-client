@@ -66,6 +66,7 @@ const BookBtn = (props) => {
 
 					const data = await response.json();
 					setBookedData(data.data);
+					setMyShow(initialState);
 				}
 			} catch (error) {
 				console.log(error);
