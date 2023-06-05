@@ -151,6 +151,8 @@
 
 .no_booking {
 	position: absolute;
+	text-align: center;
+	padding: 2rem 1rem;
 	top: 50%;
 	transform: translate(0, -50%);
 	width: 100%;
