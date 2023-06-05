@@ -14,7 +14,7 @@
 	border: 0.2rem solid black;
 	display: grid;
 	grid-template-columns: 70% 1fr;
-	grid-template-rows: 10rem 10rem 8rem 6rem;
+	grid-template-rows: minmax(10rem,auto)  minmax(10rem,auto)  minmax(8rem,auto)  minmax(6rem,auto);
 	padding: 1rem;
 	gap: 1rem;
 	background-color: rgb(10, 32, 81);

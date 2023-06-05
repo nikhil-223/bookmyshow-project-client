@@ -38,12 +38,13 @@ const BookBtn = (props) => {
 	}, [scrollDown]);
 
 	const bookShow = () => {
-		setIsBooking(true);
-		showAlert("success", "..Booking Please wait");
+		
 		let seatsSelected = Object.values(myShow.seats).filter((seatNo) => {
 			return seatNo !== 0;
 		});
-		const bookShow = async () => {
+		const bookShowApi = async () => {
+			setIsBooking(true);
+			showAlert("success", "..Booking Please wait");
 			try {
 				const response = await fetch(`${domain}api/booking`, {
 					method: "POST",
@@ -79,7 +80,7 @@ const BookBtn = (props) => {
 		else if (seatsSelected[0] === undefined)
 			showAlert("error", "Please select seats");
 		else {
-			bookShow();
+			bookShowApi();
 			setIsBooking(false);
 		}
 	};
