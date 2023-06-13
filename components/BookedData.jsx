@@ -1,16 +1,13 @@
-import React from "react";
 
 const BookedData = (props) => {
-	const { data, isBooking } = props;
+	const { data } = props;
 	return (
 		<>
-			{isBooking ? (
-				<div> ..booking </div>
-			) : (
-				<>
-				<div className="bookingDetails main_heading">
-					<span > Last Booking Details:</span>
-				</div>
+			{data ? (
+				<div className="booking">
+					<div className="bookingDetails main_heading">
+						<span> Last Booking Details:</span>
+					</div>
 					<div className="bookingDetails">
 						<span className="bookingDetails_heading">Movie</span>
 						<span className="bookingDetails_content">{data.movie}</span>
@@ -42,6 +39,10 @@ const BookedData = (props) => {
 							})}
 						</span>
 					</div>
+				</div>
+			) : (
+				<>
+					<div className="no_booking">No Bookings yet</div>
 				</>
 			)}
 		</>

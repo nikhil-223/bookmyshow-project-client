@@ -37,13 +37,18 @@ const BookBtn = (props) => {
 		}
 	}, [scrollDown]);
 
+	const setLocalStorage = (data)=>{
+		const stringData = JSON.stringify(data)
+		localStorage.setItem("booking", stringData)
+	}
+
 	const bookShow = () => {
-		
+
 		let seatsSelected = Object.values(myShow.seats).filter((seatNo) => {
 			return seatNo !== 0;
 		});
 		const bookShowApi = async () => {
-			setIsBooking(true);
+			
 			showAlert("success", "..Booking Please wait");
 			try {
 				const response = await fetch(`${domain}api/booking`, {
@@ -66,11 +71,13 @@ const BookBtn = (props) => {
 
 					const data = await response.json();
 					setBookedData(data.data);
+					setLocalStorage(data.data)
 					setMyShow(initialState);
 				}
 			} catch (error) {
 				console.log(error);
 			} finally {
+				setIsBooking(false);
 				showAlert("success", "Booking is successfull");
 				setScrollDown(true);
 			}
@@ -81,8 +88,8 @@ const BookBtn = (props) => {
 		else if (seatsSelected[0] === undefined)
 			showAlert("error", "Please select seats");
 		else {
+			setIsBooking(true);
 			bookShowApi();
-			setIsBooking(false);
 		}
 	};
 	return (

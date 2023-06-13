@@ -3,16 +3,19 @@
 import React, { useEffect, useState } from "react";
 import "@styles/home.css";
 import {
-	BookedData
-,MovieSelection
-,TimeSlotSelection
-,BookBtn
-,SeatSelection
-,Alert
+	BookedData,
+	MovieSelection,
+	TimeSlotSelection,
+	BookBtn,
+	SeatSelection,
+	Alert,
 } from "@components";
+import Image from "next/image";
 
 const Home = () => {
-
+	
+	
+	
 	const initialState = {
 		movie: "",
 		slot: "",
@@ -25,26 +28,48 @@ const Home = () => {
 			D2: 0,
 		},
 	};
+	
+	const [localStorageBooking, setLocalStorageBooking] = useState(null)
 	const [myShow, setMyShow] = useState(initialState);
-	const [isBooking, setIsBooking] = useState(false)
-	const [bookedData, setBookedData] = useState(null)
+	const [isBooking, setIsBooking] = useState(false);
+	const [bookedData, setBookedData] = useState(null);
 	const [alert, setAlert] = useState({
 		isAlert: false,
-		type:'success',
-		message:''
-	})
+		type: "success",
+		message: "",
+	});
+
+	useEffect(() => {
+		let booking = JSON.parse(localStorage.getItem("booking"));
+	  	setLocalStorageBooking(booking)
+	}, [])
+	
+
+	useEffect(() => {
+		if (localStorageBooking) {
+			setBookedData(localStorageBooking)
+		}
+	}, [localStorageBooking]);
 
 	return (
 		<section className="home">
 			<div className="container">
 				<MovieSelection myShow={myShow} setMyShow={setMyShow} />
 				<div className="container_item last_booking">
-					{bookedData ? (
-						<BookedData data={bookedData} isBooking={isBooking} />
+					{isBooking ? (
+						<div className="loading">
+					<Image
+						alt="loading"
+						width={100}
+						height={100}
+						unoptimized={true}
+						src="https://i.gifer.com/yy3.gif"
+					/>
+				</div>
 					) : (
-						<>
-							<div className="no_booking">No Bookings yet</div>
-						</>
+						
+				<BookedData data={bookedData}  />
+						
 					)}
 				</div>
 				<TimeSlotSelection myShow={myShow} setMyShow={setMyShow} />
